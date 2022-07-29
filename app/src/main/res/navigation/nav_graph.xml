@@ -9,15 +9,35 @@
         android:id="@+id/home"
         android:name="com.a7medelnoor.new_app.ui.home.HomeFragment"
         android:label="@string/toolbar_title"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/one"
-        android:name="com.a7medelnoor.new_app.ui.home.FirstFragment"
+        android:name="com.a7medelnoor.new_app.ui.first.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <argument
+            android:name="result"
+            app:argType="com.a7medelnoor.new_app.data.remote.model.Result" />
+    </fragment>
     <fragment
         android:id="@+id/two"
-        android:name="com.a7medelnoor.new_app.ui.home.SecondFragment"
+        android:name="com.a7medelnoor.new_app.ui.second.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.a7medelnoor.new_app.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="result"
+            app:argType="com.a7medelnoor.new_app.data.remote.model.Result" />
+    </fragment>
 </navigation>
