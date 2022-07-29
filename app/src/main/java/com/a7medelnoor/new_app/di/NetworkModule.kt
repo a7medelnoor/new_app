@@ -2,7 +2,7 @@ package com.a7medelnoor.new_app.di
 
 import com.a7medelnoor.new_app.data.remote.api.ApiService
 import com.a7medelnoor.new_app.util.Constants.BASE_URL
-import com.a7medelnoor.new_app.util.MyIntercepter
+import com.a7medelnoor.new_app.data.remote.api.MyIntercepter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
