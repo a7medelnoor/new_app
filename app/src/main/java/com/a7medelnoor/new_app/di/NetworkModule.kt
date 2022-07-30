@@ -3,6 +3,7 @@ package com.a7medelnoor.new_app.di
 import com.a7medelnoor.new_app.data.remote.api.ApiService
 import com.a7medelnoor.new_app.util.Constants.BASE_URL
 import com.a7medelnoor.new_app.data.remote.api.MyIntercepter
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +18,7 @@ object NetworkModule {
     private val client = OkHttpClient.Builder().apply {
         addInterceptor(MyIntercepter())
     }.build()
+    val builder = GsonBuilder().disableHtmlEscaping().create()
 
 // provide retrofit
     @Provides
@@ -24,7 +26,7 @@ object NetworkModule {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(builder))
             .build()
             .create(ApiService::class.java)
 
