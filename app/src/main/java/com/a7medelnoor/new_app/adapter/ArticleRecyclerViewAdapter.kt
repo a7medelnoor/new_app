@@ -74,7 +74,7 @@ class ArticleRecyclerViewAdapter :
                     .error(R.drawable.ic_placeholder)
                     .into(articleImageView)
             }
-           // bind the recyclerview items data
+            // bind the recyclerview items data
             articleTitleTextView.text = currentArticle!!.title
             byAutherTextView.text = currentArticle.byline
             articleSectionTextView.text = currentArticle.section
@@ -83,15 +83,17 @@ class ArticleRecyclerViewAdapter :
         }
         // on recycler view item click
         holder.itemView.setOnClickListener { mView ->
-            val direction =
-                HomeFragmentDirections.actionHomeToDetailsFragment(currentArticle!!)
-            mView.findNavController().navigate(direction)
+//            val direction =
+//                HomeFragmentDirections.actionHomeToDetailsFragment(R.id.action_homeFragment_to_detailsFragment)
+            mView.findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
+
         }
     }
 
 
     override fun getItemCount() = newsData.size
-   // set the adapter  data
+
+    // set the adapter  data
     fun setData(newData: NewsResponse) {
         val recipesDiffUtil = NewsDiffUtil(newsData, newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)

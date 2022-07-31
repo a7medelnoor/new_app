@@ -3,24 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:name="com.a7medelnoor.new_app.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/toolbar_title"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_detailsFragment2"
-            app:destination="@id/detailsFragment2" />
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailsFragment2"
+        android:id="@+id/detailsFragment"
         android:name="com.a7medelnoor.new_app.ui.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <action
-            android:id="@+id/action_detailsFragment2_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_detailsFragment_to_homeFragment"
+            app:destination="@id/home" />
     </fragment>
+    <fragment
+        android:id="@+id/one"
+        android:name="com.a7medelnoor.new_app.ui.first.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/two"
+        android:name="com.a7medelnoor.new_app.ui.second.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
 </navigation>
