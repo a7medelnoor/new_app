@@ -62,3 +62,17 @@ To run the unit test :
 - View Model
 - Network Module
 - Database Module 
+
+
+
+
+
+Home Fragment
+![alt text](https://github.com/a7medelnoor/new_app/blob/dev/app/Screenshot_main.jpg)
+
+
+
+
+
+Details Fragment
+![alt text](https://github.com/a7medelnoor/new_app/blob/dev/app/Screenshot_details.jpg)
